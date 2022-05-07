@@ -28,9 +28,9 @@ def parse_arguments():
     cwd = os.getcwd()
     parser = argparse.ArgumentParser(description="This app will zip files of a folder. It will give the archives the '.cbz' extension. This app is useful to turn a large amount of images into formats readable by comic or manga readers such as CDisplayEx.")
     
-    parser.add_argument("-src", "--source", type=folder_format_validator, default=cwd, help="The directory (absolute path) where to find the files. If not used, the directory of the script will be used. The files are sorted by creation date.")
+    parser.add_argument("-src", "--source", type=folder_format_validator, default=cwd, help="The directory (absolute path) where to find the files. The files are sorted by creation date. Default value: current working directory")
 
-    parser.add_argument("-dst", "--destination", type=folder_format_validator, default=cwd, help="The directory (absolute path) where to put the compressed folders. If not used, the directory of the script will be used")
+    parser.add_argument("-dst", "--destination", type=folder_format_validator, default=cwd, help="The directory (absolute path) where to put the compressed folders. Default value: current working directory")
 
     parser.add_argument("-s", "--size", type=integer_format_validator, default= 50, help="The number of files to put in each archive. Must be greater than 0. If the number of files in the source folder is not a multiple of the size, the remaining files will be left out. Default value: 50")
 
